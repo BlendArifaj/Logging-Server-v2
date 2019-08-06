@@ -13,4 +13,4 @@ First you initiate the server using ./output/exe/server -f arg. After you initia
 When you execute ./output/exe/client -f arg1 -t arg2 you will initiate the client. Client will send a request on message queue to communicate with server. Server after handled the message queue will create a named pipe that will allow client to send request in server.
 Client will send request using named pipe and server will handled that using conn_handler process. Conn handler will get the message on namep pipe and will try to attach shared memory to write it. After it write on shared memory, another proces will be invoked, record, and will read from shared memory and write on file.
 
-To terminate the server use CTRL+C. After you press CTRL+C, message queue, shared memory and shared segment will be deleted, and also memory that was allocated will be released.
+To terminate the server use CTRL+C. After you press CTRL+C, sockets, shared memory and shared segment will be deleted, and also memory that was allocated will be released.
